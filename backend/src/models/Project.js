@@ -331,6 +331,11 @@ projectSchema.index({ assignedVendors: 1 });
 projectSchema.index({ createdAt: -1 });
 projectSchema.index({ 'timeline.startDate': 1 });
 projectSchema.index({ 'timeline.expectedEndDate': 1 });
+projectSchema.index({ 'clientFlow.stage': 1 });
+projectSchema.index({ 'clientMetrics.satisfactionRating': 1 });
+projectSchema.index({ priority: 1, status: 1 });
+projectSchema.index({ timelineEvents: 1 });
+projectSchema.index({ invoices: 1 });
 
 // Virtual for project duration in days
 projectSchema.virtual('duration').get(function() {
