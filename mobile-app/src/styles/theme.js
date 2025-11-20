@@ -1,31 +1,31 @@
-// Professional Dashboard Theme - Dark Blue & Beige
+// Premium Mobile Client Management Theme - Blue–Beige Design System
 export const colors = {
-  // Primary Dark Blue Colors
-  primary: {
-    50: '#f0f4ff',
-    100: '#e0e7ff',
-    200: '#c7d2fe',
-    300: '#a5b4fc',
-    400: '#818cf8',
-    500: '#1e3a8a',    // Main dark blue
-    600: '#1e40af',
-    700: '#1d4ed8',
-    800: '#1e3a8a',
-    900: '#1a202c',
+  // Beige Base Colors
+  beige: {
+    50: '#FEFEFE',      // Almost white
+    100: '#FBF7EE',     // Beige Light - Primary background
+    200: '#F8F1E6',     // Soft Cream
+    300: '#EFE4D3',     // Warm Sand
+    400: '#E6D7C2',     // Deeper Sand
+    500: '#D4C4B0',     // Medium Beige
+    600: '#C9B89A',     // Pending Taupe
+    700: '#A8997F',     // Dark Beige
+    800: '#8B7D6B',     // Deep Beige
+    900: '#6B5D54',     // Darkest Beige
   },
 
-  // Secondary Beige Colors
-  secondary: {
-    50: '#fefdfb',
-    100: '#fef7ed',
-    200: '#fef3e2',
-    300: '#fdedd3',
-    400: '#fce7c3',
-    500: '#f5deb3',    // Main beige (wheat)
-    600: '#ddb892',
-    700: '#c19a6b',
-    800: '#a0825c',
-    900: '#8b6f47',
+  // Royal Blue Colors
+  blue: {
+    50: '#F0F4FF',      // Very light blue
+    100: '#E0EAFF',     // Light blue
+    200: '#C7D7FE',     // Soft light blue
+    300: '#A5B8FC',     // Light blue
+    400: '#8B9DFC',     // Medium light blue
+    500: '#3E60D8',     // Royal Blue - Primary
+    600: '#566FE0',     // Indigo Blue
+    700: '#4A5BC9',     // Deep royal blue
+    800: '#7487C1',     // Steel Blue
+    900: '#1B2540',     // Deep Navy
   },
 
   // Success Colors - Green
