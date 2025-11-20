@@ -70,55 +70,72 @@ export const colors = {
     900: '#8B5C28',
   },
 
-  // Neutral/Gray Colors
+  // Neutral Colors
   neutral: {
-    50: '#fafafa',
-    100: '#f5f5f5',
-    200: '#eeeeee',
-    300: '#e0e0e0',
-    400: '#bdbdbd',
-    500: '#9e9e9e',
-    600: '#757575',
-    700: '#616161',
-    800: '#424242',
-    900: '#212121',
-    white: '#ffffff',
+    50: '#FEFEFE',
+    100: '#FAFAFA',
+    200: '#F5F5F5',
+    300: '#E5E5E5',
+    400: '#D4D4D4',
+    500: '#A3A3A3',
+    600: '#737373',
+    700: '#525252',
+    800: '#404040',
+    900: '#262626',
+    white: '#FFFFFF',
     black: '#000000',
   },
 
-  // Background Colors - Professional Style
+  // Background Colors - Mobile Client Management Theme
   background: {
-    primary: '#fefdfb',      // Very light beige
-    secondary: '#ffffff',    // Pure white
-    tertiary: '#f0f4ff',     // Very light blue
-    card: '#ffffff',         // White cards
-    surface: '#ffffff',      // Surface color
-    overlay: 'rgba(30, 58, 138, 0.6)', // Dark blue overlay
-    accent: '#f5deb3',       // Beige accent
-    dark: '#1e3a8a',         // Dark blue
+    primary: '#FBF7EE',      // Beige Light - Main background
+    secondary: '#FFFFFF',    // Pure white
+    tertiary: '#F8F1E6',     // Soft Cream
+    card: '#FFFFFF',         // White cards
+    surface: '#FFFFFF',      // Surface color
+    overlay: 'rgba(27, 37, 64, 0.6)', // Deep Navy overlay
+    accent: '#EFE4D3',       // Warm Sand accent
+    dark: '#1B2540',         // Deep Navy
+    glass: 'rgba(251, 247, 238, 0.8)', // Glassmorphism background
+    modal: 'rgba(27, 37, 64, 0.4)', // Modal backdrop
   },
 
-  // Text Colors - Professional & Readable
+  // Text Colors - Mobile Optimized
   text: {
-    primary: '#0f172a',      // Dark slate
-    secondary: '#475569',    // Medium slate
-    tertiary: '#64748b',     // Light slate
-    muted: '#94a3b8',        // Very light slate
-    white: '#ffffff',        // Pure white
-    inverse: '#ffffff',      // White on dark backgrounds
-    brand: '#1976d2',        // Brand blue
-    success: '#059669',      // Success green
-    warning: '#d97706',      // Warning orange
-    error: '#dc2626',        // Error red
+    primary: '#1B2540',      // Deep Navy - Main text
+    secondary: '#566FE0',    // Indigo Blue - Secondary text
+    tertiary: '#7487C1',     // Steel Blue - Tertiary text
+    muted: '#C9B89A',        // Pending Taupe - Muted text
+    white: '#FFFFFF',        // Pure white
+    inverse: '#FFFFFF',      // White on dark backgrounds
+    brand: '#3E60D8',        // Royal Blue brand
+    success: '#7DB87A',      // Success green
+    warning: '#E8B25D',      // Warning orange
+    danger: '#D75A5A',       // Danger red
   },
 
-  // Border Colors - Subtle & Modern
+  // Border Colors - Mobile Friendly
   border: {
-    light: '#f1f5f9',        // Very light
-    medium: '#e2e8f0',       // Light
-    dark: '#cbd5e1',         // Medium
-    primary: '#1976d2',      // Brand blue
-    focus: '#3b82f6',        // Focus blue
+    light: '#F8F1E6',        // Soft Cream
+    medium: '#EFE4D3',       // Warm Sand
+    dark: '#D4C4B0',         // Medium Beige
+    primary: '#3E60D8',      // Royal Blue
+    focus: '#566FE0',        // Indigo Blue
+    accent: '#C9B89A',       // Pending Taupe
+    glass: 'rgba(255, 255, 255, 0.2)', // Glassmorphism border
+  },
+
+  // Status Colors - Client Management Specific
+  status: {
+    active: '#7DB87A',       // Success Green
+    inactive: '#C9B89A',     // Pending Taupe
+    'at-risk': '#E8B25D',    // Warning Orange
+    pending: '#566FE0',      // Indigo Blue
+    completed: '#7DB87A',    // Success Green
+    'in-progress': '#3E60D8', // Royal Blue
+    planning: '#7487C1',     // Steel Blue
+    'on-hold': '#E8B25D',    // Warning Orange
+    cancelled: '#D75A5A',    // Danger Red
   },
 };
 
