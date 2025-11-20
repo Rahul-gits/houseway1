@@ -16,8 +16,9 @@ import StatusRibbonCard from '../../components/premium/StatusRibbonCard';
 import WorkloadRing from '../../components/premium/WorkloadRing';
 
 // Import theme
-import { colors, typography, spacing } from '../../styles/theme';
+import { colors, typography, spacing, shapes, borderRadius } from '../../styles/theme';
 import { Ionicons } from '@expo/vector-icons';
+import { Text } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
