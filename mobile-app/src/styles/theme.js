@@ -141,18 +141,33 @@ export const colors = {
 
 
 
-// Typography
+// Typography - Premium Mobile Design
 export const typography = {
-  fontSizes: {
-    xs: 12,
-    sm: 14,
-    md: 16,
-    lg: 18,
-    xl: 20,
-    xxl: 24,
-    xxxl: 28,
-    display: 32,
+  // Font Family - Inter Display System
+  fontFamily: {
+    display: 'InterDisplay-Bold',     // Inter Display Bold for headings
+    heading: 'InterDisplay-Bold',     // Inter Display Bold for headings
+    body: 'Inter-Regular',            // Inter Regular for body text
+    medium: 'Inter-Medium',           // Inter Medium for chips and UI elements
+    regular: 'Inter-Regular',         // Fallback to regular
+    bold: 'Inter-Bold',               // Bold weight
   },
+
+  // Font Sizes - Mobile Optimized
+  fontSizes: {
+    xs: 11,        // Small captions
+    sm: 13,        // Body small
+    base: 15,      // Base body
+    md: 16,        // Medium body
+    lg: 18,        // Large body
+    xl: 20,        // Small headings
+    xxl: 24,       // Medium headings
+    xxxl: 28,      // Large headings
+    display: 32,   // Hero headings
+    hero: 40,      // Extra large hero text
+  },
+
+  // Font Weights - Inter System
   fontWeights: {
     light: '300',
     normal: '400',
@@ -161,11 +176,22 @@ export const typography = {
     bold: '700',
     extrabold: '800',
   },
+
+  // Line Heights - Mobile Reading
   lineHeights: {
-    tight: 1.2,
-    normal: 1.4,
-    relaxed: 1.6,
-    loose: 1.8,
+    tight: 1.2,     // Headings
+    normal: 1.4,    // Body text
+    relaxed: 1.6,   // Comfortable reading
+    loose: 1.8,     // Very spacious
+  },
+
+  // Letter Spacing - Premium Touch
+  letterSpacing: {
+    tight: -0.5,
+    normal: 0,
+    wide: 0.5,
+    wider: 1,
+    widest: 2,
   },
 };
 
