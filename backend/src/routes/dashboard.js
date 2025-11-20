@@ -5,6 +5,10 @@ const MaterialRequest = require('../models/MaterialRequest');
 const Quotation = require('../models/Quotation');
 const Project = require('../models/Project');
 const PurchaseOrder = require('../models/PurchaseOrder');
+const Client = require('../models/Client');
+const TimelineEvent = require('../models/TimelineEvent');
+const Invoice = require('../models/Invoice');
+const User = require('../models/User');
 
 /**
  * @route   GET /api/dashboard/stats
