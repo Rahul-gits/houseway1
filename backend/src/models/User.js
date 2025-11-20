@@ -400,6 +400,12 @@ const userSchema = new mongoose.Schema({
 // Index for better query performance (email index is already created by unique: true)
 userSchema.index({ role: 1 });
 userSchema.index({ isActive: 1 });
+userSchema.index({ 'employeeDetails.department': 1 });
+userSchema.index({ 'employeeDetails.availability.status': 1 });
+userSchema.index({ createdAt: -1 });
+userSchema.index({ lastLogin: -1 });
+userSchema.index({ 'notificationPreferences.email.enabled': 1 });
+userSchema.index({ 'notificationPreferences.push.enabled': 1 });
 
 // Virtual for full name
 userSchema.virtual('fullName').get(function() {
