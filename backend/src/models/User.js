@@ -61,10 +61,118 @@ const userSchema = new mongoose.Schema({
   // Role-specific fields
   employeeDetails: {
     employeeId: String,
-    department: String,
+    department: {
+      type: String,
+      enum: ['design', 'project-management', 'construction', 'sales', 'admin', 'finance', 'other']
+    },
     position: String,
     hireDate: Date,
     skills: [String],
+    certifications: [{
+      name: String,
+      issuedBy: String,
+      issuedDate: Date,
+      expiryDate: Date,
+      certificateNumber: String
+    }],
+    specialization: [String],
+    // Enhanced client management fields for employees
+    clientCount: {
+      type: Number,
+      default: 0
+    },
+    averageClientSatisfaction: {
+      type: Number,
+      min: [1, 'Rating must be at least 1'],
+      max: [5, 'Rating cannot exceed 5'],
+      default: 5
+    },
+    totalProjectsManaged: {
+      type: Number,
+      default: 0
+    },
+    responseTime: {
+      type: Number, // Average response time in hours
+      default: 24
+    },
+    commissionRate: {
+      type: Number,
+      min: [0, 'Commission rate cannot be negative'],
+      max: [100, 'Commission rate cannot exceed 100'],
+      default: 0
+    },
+    salesTarget: {
+      type: Number,
+      default: 0
+    },
+    currentSales: {
+      type: Number,
+      default: 0
+    },
+    performanceMetrics: {
+      clientRetentionRate: {
+        type: Number,
+        min: [0, 'Retention rate cannot be negative'],
+        max: [100, 'Retention rate cannot exceed 100'],
+        default: 100
+      },
+      averageProjectValue: {
+        type: Number,
+        default: 0
+      },
+      onTimeDeliveryRate: {
+        type: Number,
+        min: [0, 'On-time delivery rate cannot be negative'],
+        max: [100, 'On-time delivery rate cannot exceed 100'],
+        default: 100
+      },
+      clientComplaints: {
+        type: Number,
+        default: 0
+      }
+    },
+    availability: {
+      status: {
+        type: String,
+        enum: ['available', 'busy', 'on-vacation', 'unavailable'],
+        default: 'available'
+      },
+      workingHours: {
+        monday: { start: String, end: String },
+        tuesday: { start: String, end: String },
+        wednesday: { start: String, end: String },
+        thursday: { start: String, end: String },
+        friday: { start: String, end: String },
+        saturday: { start: String, end: String },
+        sunday: { start: String, end: String }
+      },
+      timezone: {
+        type: String,
+        default: 'America/New_York'
+      }
+    },
+    permissions: {
+      canCreateInvoices: {
+        type: Boolean,
+        default: true
+      },
+      canApproveInvoices: {
+        type: Boolean,
+        default: false
+      },
+      canManageClients: {
+        type: Boolean,
+        default: true
+      },
+      canViewFinancialData: {
+        type: Boolean,
+        default: false
+      },
+      canScheduleMeetings: {
+        type: Boolean,
+        default: true
+      }
+    }
   },
   vendorDetails: {
     companyName: String,
@@ -82,10 +190,112 @@ const userSchema = new mongoose.Schema({
     },
   },
   clientDetails: {
-    projectBudget: Number,
-    preferredStyle: String,
-    propertyType: String,
-    timeline: String,
+    projectBudget: {
+      min: Number,
+      max: Number
+    },
+    preferredStyle: {
+      type: String,
+      enum: ['modern', 'traditional', 'contemporary', 'minimalist', 'industrial', 'scandinavian', 'transitional']
+    },
+    propertyType: {
+      type: String,
+      enum: ['single-family', 'condo', 'townhouse', 'apartment', 'office', 'retail', 'mixed-use']
+    },
+    timeline: {
+      preferred: {
+        type: String,
+        enum: ['asap', 'normal', 'flexible']
+      },
+      urgency: {
+        type: String,
+        enum: ['low', 'medium', 'high']
+      }
+    },
+    // Enhanced client communication preferences
+    communicationStyle: {
+      type: String,
+      enum: ['formal', 'casual', 'detailed', 'brief', 'visual'],
+      default: 'professional'
+    },
+    riskAssessment: {
+      level: {
+        type: String,
+        enum: ['low', 'medium', 'high'],
+        default: 'medium'
+      },
+      factors: [String],
+      lastAssessed: Date
+    },
+    references: [{
+      name: String,
+      company: String,
+      position: String,
+      email: String,
+      phone: String,
+      relationship: String
+    }],
+    socialMedia: {
+      linkedin: String,
+      facebook: String,
+      instagram: String,
+      pinterest: String
+    },
+    preferences: {
+      communicationFrequency: {
+        type: String,
+        enum: ['daily', 'weekly', 'bi-weekly', 'monthly', 'as-needed'],
+        default: 'weekly'
+      },
+      preferredContactMethod: {
+        type: String,
+        enum: ['email', 'phone', 'text', 'in-person'],
+        default: 'email'
+      },
+      decisionMakingStyle: {
+        type: String,
+        enum: ['quick', 'deliberate', 'consensus', 'solo'],
+        default: 'deliberate'
+      },
+      budgetSensitivity: {
+        type: String,
+        enum: ['very-sensitive', 'moderate', 'flexible'],
+        default: 'moderate'
+      }
+    },
+    // Client history and feedback
+    previousProjects: [{
+      projectName: String,
+      projectType: String,
+      budget: Number,
+      duration: Number,
+      satisfactionRating: {
+        type: Number,
+        min: 1,
+        max: 5
+      },
+      wouldRecommend: Boolean,
+      completionDate: Date,
+      notes: String
+    }],
+    testimonials: [{
+      text: String,
+      rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        required: true
+      },
+      date: Date,
+      verified: {
+        type: Boolean,
+        default: false
+      },
+      project: {
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+      }
+    }]
   },
   lastLogin: {
     type: Date,
