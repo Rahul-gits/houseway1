@@ -77,14 +77,21 @@ const fileFilter = (req, file, cb) => {
     'image/jpg': true,
     'image/png': true,
     'image/gif': true,
+    'image/webp': true,
+    'video/mp4': true,
+    'video/mov': true,
+    'video/avi': true,
+    'video/quicktime': true,
     'application/pdf': true,
     'application/msword': true,
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': true,
     'application/vnd.ms-excel': true,
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': true,
     'text/plain': true,
+    'audio/mpeg': true,
+    'audio/wav': true,
   };
-  
+
   if (allowedTypes[file.mimetype]) {
     cb(null, true);
   } else {
