@@ -301,6 +301,93 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: null,
   },
+  // Notification preferences for all user types
+  notificationPreferences: {
+    email: {
+      enabled: {
+        type: Boolean,
+        default: true
+      },
+      types: [{
+        type: {
+          type: String,
+          enum: ['project-updates', 'timeline-events', 'invoices', 'payments', 'meetings', 'system-updates']
+        },
+        enabled: {
+          type: Boolean,
+          default: true
+        }
+      }]
+    },
+    push: {
+      enabled: {
+        type: Boolean,
+        default: true
+      },
+      types: [{
+        type: {
+          type: String,
+          enum: ['project-updates', 'timeline-events', 'invoices', 'payments', 'meetings', 'system-updates']
+        },
+        enabled: {
+          type: Boolean,
+          default: true
+        }
+      }]
+    },
+    sms: {
+      enabled: {
+        type: Boolean,
+        default: false
+      },
+      types: [{
+        type: {
+          type: String,
+          enum: ['urgent-updates', 'payment-reminders', 'meeting-reminders']
+        },
+        enabled: {
+          type: Boolean,
+          default: false
+        }
+      }]
+    },
+    quietHours: {
+      enabled: {
+        type: Boolean,
+        default: true
+      },
+      start: {
+        type: String,
+        default: '22:00' // 10 PM
+      },
+      end: {
+        type: String,
+        default: '08:00' // 8 AM
+      },
+      timezone: {
+        type: String,
+        default: 'America/New_York'
+      }
+    },
+    frequency: {
+      immediate: {
+        type: Boolean,
+        default: true
+      },
+      dailyDigest: {
+        type: Boolean,
+        default: false
+      },
+      weeklySummary: {
+        type: Boolean,
+        default: true
+      },
+      monthlyReport: {
+        type: Boolean,
+        default: false
+      }
+    }
+  },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
