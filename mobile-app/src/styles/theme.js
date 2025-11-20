@@ -195,26 +195,66 @@ export const typography = {
   },
 };
 
-// Spacing
+// Spacing - Mobile Design System
 export const spacing = {
-  xs: 4,
-  sm: 8,
-  md: 12,
-  lg: 16,
-  xl: 20,
-  xxl: 24,
-  xxxl: 32,
-  xxxxl: 40,
-};
-
-// Border Radius
-export const borderRadius = {
+  xs: 2,
   sm: 4,
   md: 8,
   lg: 12,
   xl: 16,
   xxl: 20,
-  round: 50,
+  xxxl: 24,
+  xxxxl: 32,
+  xxxxxl: 40,   // Extra large spacing
+  xxxxxxl: 48,  // Maximum spacing
+};
+
+// Border Radius - Mobile UI Shapes (16-20px as specified)
+export const borderRadius = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,        // Standard mobile rounded corners
+  xl: 20,        // Premium rounded corners (as specified)
+  xxl: 24,       // Extra rounded
+  round: 50,     // Fully round
+  pill: 9999,    // Pill shape for chips
+};
+
+// Mobile UI Shapes & Creative Design Constants
+export const shapes = {
+  // Wave patterns
+  waveHeader: {
+    height: 120,
+    curve: 'M0,120 Q160,60 320,120 L320,0 L0,0 Z',
+    amplitude: 60,
+  },
+
+  // Circular elements
+  floatingBlobs: {
+    size: { sm: 40, md: 60, lg: 80 },
+    blur: 20,
+  },
+
+  // Card specifications
+  cards: {
+    cornerRadius: 18,
+    softShadow: {
+      shadowColor: '#1B2540',
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.08,
+      shadowRadius: 24,
+      elevation: 12,
+    },
+  },
+
+  // Glassmorphism
+  glass: {
+    blur: 15,
+    opacity: 0.8,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
+  },
 };
 
 // Shadows - Web and Mobile Compatible
