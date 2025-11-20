@@ -28,46 +28,46 @@ export const colors = {
     900: '#1B2540',     // Deep Navy
   },
 
-  // Success Colors - Green
+  // Success Colors - Natural Green
   success: {
-    50: '#e8f5e8',
-    100: '#c8e6c9',
-    200: '#a5d6a7',
-    300: '#81c784',
-    400: '#66bb6a',
-    500: '#4caf50',    // Main success green
-    600: '#43a047',
-    700: '#388e3c',
-    800: '#2e7d32',
-    900: '#1b5e20',
+    50: '#F0F9F0',
+    100: '#DCF0DC',
+    200: '#C7E7C7',
+    300: '#A8D5A8',
+    400: '#7DB87A',     // Success Green - Primary
+    500: '#68B168',
+    600: '#5A9A5A',
+    700: '#4C834C',
+    800: '#3E6B3E',
+    900: '#2F542F',
   },
 
-  // Error Colors - Red
-  error: {
-    50: '#ffebee',
-    100: '#ffcdd2',
-    200: '#ef9a9a',
-    300: '#e57373',
-    400: '#ef5350',
-    500: '#f44336',    // Main error red
-    600: '#e53935',
-    700: '#d32f2f',
-    800: '#c62828',
-    900: '#b71c1c',
+  // Danger Colors - Natural Red
+  danger: {
+    50: '#FEF0F0',
+    100: '#FDD6D6',
+    200: '#FCBEBE',
+    300: '#FA9E9E',
+    400: '#F87878',
+    500: '#D75A5A',     // Danger Red - Primary
+    600: '#C54545',
+    700: '#B23232',
+    800: '#9A2A2A',
+    900: '#7F2323',
   },
 
-  // Warning Colors - Orange
+  // Warning Colors - Warm Orange
   warning: {
-    50: '#fff3e0',
-    100: '#ffe0b2',
-    200: '#ffcc80',
-    300: '#ffb74d',
-    400: '#ffa726',
-    500: '#ff9800',    // Main warning orange
-    600: '#fb8c00',
-    700: '#f57c00',
-    800: '#ef6c00',
-    900: '#e65100',
+    50: '#FEF7F0',
+    100: '#FDECD6',
+    200: '#FCDDBE',
+    300: '#FAC89E',
+    400: '#F8B078',
+    500: '#E8B25D',     // Warning Orange - Primary
+    600: '#D49A48',
+    700: '#C08538',
+    800: '#A67030',
+    900: '#8B5C28',
   },
 
   // Neutral/Gray Colors
