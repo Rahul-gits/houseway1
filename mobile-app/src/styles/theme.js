@@ -469,34 +469,62 @@ export const animations = {
   },
 };
 
-// Component Styles
+// Component Styles - Premium Mobile Components
 export const components = {
   button: {
     primary: {
-      backgroundColor: colors.primary[500],
-      borderColor: colors.primary[500],
+      backgroundColor: colors.blue[500],
+      borderColor: colors.blue[500],
       color: colors.text.white,
+      borderRadius: borderRadius.xl,
+      ...shadows.md,
     },
     secondary: {
-      backgroundColor: colors.secondary[500],
-      borderColor: colors.secondary[500],
+      backgroundColor: colors.beige[200],
+      borderColor: colors.beige[300],
       color: colors.text.primary,
+      borderRadius: borderRadius.xl,
+      ...shadows.sm,
     },
     outline: {
       backgroundColor: 'transparent',
-      borderColor: colors.primary[500],
-      color: colors.primary[500],
+      borderColor: colors.blue[500],
+      color: colors.blue[500],
+      borderRadius: borderRadius.xl,
+      borderWidth: 2,
+    },
+    ghost: {
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
+      color: colors.blue[500],
+      borderRadius: borderRadius.lg,
     },
   },
   card: {
     default: {
       backgroundColor: colors.background.card,
       borderColor: colors.border.light,
-      shadowColor: colors.neutral[900],
+      borderRadius: borderRadius.xl,
+      ...shadows.sm,
     },
     elevated: {
       backgroundColor: colors.background.card,
+      borderRadius: borderRadius.xl,
       ...shadows.md,
+    },
+    glass: {
+      backgroundColor: colors.background.glass,
+      borderColor: colors.border.glass,
+      borderRadius: borderRadius.xl,
+      borderWidth: shapes.glass.borderWidth,
+      ...shadows.soft,
+    },
+    ribbon: {
+      backgroundColor: colors.background.card,
+      borderLeftColor: colors.blue[500],
+      borderLeftWidth: 6,
+      borderRadius: borderRadius.xl,
+      ...shadows.soft,
     },
   },
   input: {
@@ -505,10 +533,48 @@ export const components = {
       borderColor: colors.border.light,
       color: colors.text.primary,
       placeholderColor: colors.text.muted,
+      borderRadius: borderRadius.xl,
+      borderWidth: 1,
+      paddingHorizontal: spacing.lg,
+      paddingVertical: spacing.md,
     },
     focused: {
-      borderColor: colors.primary[500],
-      backgroundColor: colors.neutral.white,
+      borderColor: colors.blue[500],
+      backgroundColor: colors.background.secondary,
+      borderWidth: 2,
+    },
+    glass: {
+      backgroundColor: colors.background.glass,
+      borderColor: colors.border.glass,
+      color: colors.text.primary,
+      placeholderColor: colors.text.muted,
+      borderRadius: borderRadius.xl,
+      borderWidth: shapes.glass.borderWidth,
+    },
+  },
+  chip: {
+    default: {
+      backgroundColor: colors.beige[200],
+      color: colors.text.primary,
+      borderRadius: borderRadius.pill,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm,
+    },
+    active: {
+      backgroundColor: colors.blue[500],
+      color: colors.text.white,
+      borderRadius: borderRadius.pill,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm,
+    },
+    outline: {
+      backgroundColor: 'transparent',
+      borderColor: colors.blue[500],
+      color: colors.blue[500],
+      borderRadius: borderRadius.pill,
+      borderWidth: 1,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm,
     },
   },
 };
