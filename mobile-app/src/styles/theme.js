@@ -579,27 +579,48 @@ export const components = {
   },
 };
 
-// Status Colors for Different States - Solid Colors Only
+// Status Colors - Client Management Specific
 export const statusColors = {
+  // Project statuses
   project: {
-    planning: colors.primary[500],
-    'in-progress': colors.secondary[600],
+    planning: colors.steelBlue || colors.blue[800],
+    'in-progress': colors.blue[500],
     completed: colors.success[500],
     'on-hold': colors.warning[500],
-    cancelled: colors.error[500],
+    cancelled: colors.danger[500],
   },
+  // Client statuses
+  client: {
+    active: colors.success[500],
+    inactive: colors.status['inactive'],
+    'at-risk': colors.status['at-risk'],
+    pending: colors.status.pending,
+  },
+  // Priority levels
   priority: {
     low: colors.success[500],
     medium: colors.warning[500],
-    high: colors.error[500],
+    high: colors.danger[500],
+    critical: colors.blue[900],
   },
+  // Material and request statuses
   material: {
     pending: colors.warning[500],
     approved: colors.success[500],
-    rejected: colors.error[500],
+    rejected: colors.danger[500],
+    'in-progress': colors.blue[500],
+  },
+  // Invoice statuses
+  invoice: {
+    draft: colors.status.pending,
+    sent: colors.blue[500],
+    paid: colors.success[500],
+    overdue: colors.warning[500],
+    cancelled: colors.danger[500],
   },
 };
 
+// Export the complete theme
 export default {
   colors,
   cardStyles,
@@ -607,6 +628,9 @@ export default {
   spacing,
   borderRadius,
   shadows,
+  shapes,
+  gradients,
+  animations,
   components,
   statusColors,
 };
