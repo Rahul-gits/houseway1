@@ -769,7 +769,7 @@ router.get('/summary', auth, canManageClients, async (req, res) => {
 });
 
 // Export client data (CSV format)
-router.get('/:id/export', auth, canManageClients, async (req, req) => {
+router.get('/:id/export', auth, canManageClients, async (req, res) => {
   try {
     const client = await Client.findById(req.params.id)
       .populate('projects', 'name status budget')
