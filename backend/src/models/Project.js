@@ -211,6 +211,109 @@ const projectSchema = new mongoose.Schema({
       default: false,
     },
   }],
+  // Enhanced client management fields
+  clientFlow: {
+    stage: {
+      type: String,
+      enum: ['initial-consultation', 'design-concept', 'design-development', 'contract-signing', 'permit-application', 'pre-construction', 'construction', 'post-construction', 'final-handover', 'warranty-period'],
+      default: 'initial-consultation'
+    },
+    milestones: [{
+      name: {
+        type: String,
+        required: true
+      },
+      description: String,
+      targetDate: Date,
+      actualDate: Date,
+      status: {
+        type: String,
+        enum: ['pending', 'in-progress', 'completed', 'delayed'],
+        default: 'pending'
+      },
+      dependencies: [String],
+      deliverables: [String],
+      percentage: Number
+    }],
+    nextMilestone: {
+      name: String,
+      targetDate: Date,
+      priority: {
+        type: String,
+        enum: ['low', 'medium', 'high', 'critical'],
+        default: 'medium'
+      }
+    },
+    clientMetrics: {
+      satisfactionRating: {
+        type: Number,
+        min: [1, 'Rating must be at least 1'],
+        max: [5, 'Rating cannot exceed 5']
+      },
+      communicationFrequency: {
+        type: String,
+        enum: ['daily', 'weekly', 'bi-weekly', 'monthly', 'as-needed'],
+        default: 'weekly'
+      },
+      decisionMakingSpeed: {
+        type: String,
+        enum: ['very-fast', 'fast', 'normal', 'slow', 'very-slow'],
+        default: 'normal'
+      },
+      budgetAdherence: {
+        type: String,
+        enum: ['under-budget', 'on-budget', 'slightly-over', 'significantly-over'],
+        default: 'on-budget'
+      },
+      changeOrderFrequency: {
+        type: Number,
+        default: 0
+      },
+      feedbackRequests: [{
+        date: Date,
+        type: {
+          type: String,
+          enum: ['design', 'material', 'schedule', 'budget', 'other']
+        },
+        status: {
+          type: String,
+          enum: ['pending', 'approved', 'rejected', 'modified'],
+          default: 'pending'
+        },
+        description: String,
+        responseTime: Number // Hours
+      }]
+    },
+    clientVisibility: {
+      publicPhotos: {
+        type: Boolean,
+        default: false
+      },
+      privateNotes: {
+        type: Boolean,
+        default: true
+      },
+      budgetAccess: {
+        type: String,
+        enum: ['full', 'summary', 'none'],
+        default: 'summary'
+      },
+      scheduleAccess: {
+        type: String,
+        enum: ['full', 'milestones', 'none'],
+        default: 'milestones'
+      }
+    }
+  },
+  // References to timeline events and invoices
+  timelineEvents: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'TimelineEvent'
+  }],
+  invoices: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Invoice'
+  }],
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
