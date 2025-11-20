@@ -3,7 +3,17 @@ const path = require('path');
 const fs = require('fs');
 
 // Ensure upload directories exist
-const uploadDirs = ['uploads/documents', 'uploads/images', 'uploads/quotations', 'uploads/purchase-orders'];
+const uploadDirs = [
+  'uploads/documents',
+  'uploads/images',
+  'uploads/quotations',
+  'uploads/purchase-orders',
+  'uploads/timeline',
+  'uploads/clients',
+  'uploads/projects',
+  'uploads/profiles',
+  'uploads/temp'
+];
 uploadDirs.forEach(dir => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
