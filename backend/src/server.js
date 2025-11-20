@@ -147,6 +147,12 @@ app.use('/api/files', require('./routes/files'));
 app.use('/api/dashboard', require('./routes/dashboard'));
 app.use('/api/work-status', require('./routes/workStatus'));
 
+// Client Management Routes
+app.use('/api/clients', require('./routes/clients'));
+app.use('/api/timeline', require('./routes/timeline'));
+app.use('/api/invoices', require('./routes/invoices'));
+app.use('/api/uploads', require('./routes/uploads'));
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
