@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 
 // Import role-specific navigators
 import OwnerNavigator from './OwnerNavigator';
-import EmployeeNavigator from './EmployeeNavigator';
+import ClientManagementNavigator from './ClientManagementNavigator'; // New Client Management Navigator
 import VendorNavigator from './VendorNavigator';
 import ClientNavigator from './ClientNavigator';
 import GuestNavigator from './GuestNavigator';
