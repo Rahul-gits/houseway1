@@ -24,26 +24,48 @@ uploadDirs.forEach(dir => {
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let uploadPath = 'uploads/';
-    
+
     // Determine upload path based on file type and route
-    if (req.route.path.includes('quotation')) {
+    if (req.route.path.includes('timeline')) {
+      uploadPath += 'timeline/';
+    } else if (req.route.path.includes('client')) {
+      uploadPath += 'clients/';
+    } else if (req.route.path.includes('project')) {
+      uploadPath += 'projects/';
+    } else if (req.route.path.includes('profile')) {
+      uploadPath += 'profiles/';
+    } else if (req.route.path.includes('quotation')) {
       uploadPath += 'quotations/';
     } else if (req.route.path.includes('purchase-order')) {
       uploadPath += 'purchase-orders/';
+    } else if (req.route.path.includes('temp')) {
+      uploadPath += 'temp/';
     } else if (file.mimetype.startsWith('image/')) {
       uploadPath += 'images/';
     } else {
       uploadPath += 'documents/';
     }
-    
+
     cb(null, uploadPath);
   },
   filename: (req, file, cb) => {
-    // Generate unique filename
+    // Generate unique filename with prefix based on context
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     const extension = path.extname(file.originalname);
     const baseName = path.basename(file.originalname, extension);
-    cb(null, `${baseName}-${uniqueSuffix}${extension}`);
+
+    let prefix = '';
+    if (req.route.path.includes('timeline')) {
+      prefix = 'timeline-';
+    } else if (req.route.path.includes('client')) {
+      prefix = `client-${req.params.clientId || 'unknown'}-`;
+    } else if (req.route.path.includes('project')) {
+      prefix = `project-${req.params.projectId || 'unknown'}-`;
+    } else if (req.route.path.includes('profile')) {
+      prefix = `profile-${req.user.id}-`;
+    }
+
+    cb(null, `${prefix}${baseName}-${uniqueSuffix}${extension}`);
   }
 });
 
