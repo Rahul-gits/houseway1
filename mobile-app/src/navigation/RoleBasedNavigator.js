@@ -19,7 +19,7 @@ const RoleBasedNavigator = () => {
     case 'owner':
       return <OwnerNavigator />;
     case 'employee':
-      return <EmployeeNavigator />;
+      return <ClientManagementNavigator />; // Updated to use new Client Management flow
     case 'vendor':
       return <VendorNavigator />;
     case 'client':
