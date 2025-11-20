@@ -309,11 +309,11 @@ export const shadows = {
   },
 };
 
-// Card Styles - Creative and Standardized
+// Card Styles - Premium Mobile Design
 export const cardStyles = {
   default: {
     backgroundColor: colors.background.card,
-    borderRadius: borderRadius.lg,
+    borderRadius: borderRadius.xl,
     padding: spacing.lg,
     borderWidth: 1,
     borderColor: colors.border.light,
@@ -321,30 +321,151 @@ export const cardStyles = {
   },
   elevated: {
     backgroundColor: colors.background.card,
-    borderRadius: borderRadius.lg,
+    borderRadius: borderRadius.xl,
     padding: spacing.lg,
     ...shadows.md,
   },
   accent: {
-    backgroundColor: colors.secondary[50],
-    borderRadius: borderRadius.lg,
+    backgroundColor: colors.background.accent,
+    borderRadius: borderRadius.xl,
     padding: spacing.lg,
     borderLeftWidth: 4,
-    borderLeftColor: colors.primary[500],
+    borderLeftColor: colors.blue[500],
     ...shadows.sm,
   },
   primary: {
-    backgroundColor: colors.primary[500],
-    borderRadius: borderRadius.lg,
+    backgroundColor: colors.blue[500],
+    borderRadius: borderRadius.xl,
     padding: spacing.lg,
     ...shadows.md,
   },
   secondary: {
-    backgroundColor: colors.secondary[100],
-    borderRadius: borderRadius.lg,
+    backgroundColor: colors.beige[100],
+    borderRadius: borderRadius.xl,
     padding: spacing.lg,
     borderWidth: 1,
-    borderColor: colors.secondary[300],
+    borderColor: colors.beige[300],
+  },
+  glass: {
+    backgroundColor: colors.background.glass,
+    borderRadius: borderRadius.xl,
+    padding: spacing.lg,
+    borderWidth: shapes.glass.borderWidth,
+    borderColor: shapes.glass.borderColor,
+    ...shadows.soft,
+  },
+  ribbon: {
+    backgroundColor: colors.background.card,
+    borderRadius: borderRadius.xl,
+    padding: spacing.lg,
+    borderLeftWidth: 6,
+    borderLeftColor: colors.blue[500],
+    ...shadows.soft,
+  },
+};
+
+// Gradients - Blue → Beige Curved Gradients
+export const gradients = {
+  primary: {
+    colors: [colors.blue[500], colors.blue[600], colors.beige[100]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 1 },
+  },
+  header: {
+    colors: [colors.blue[500], colors.blue[400], colors.beige[100]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0.6 },
+  },
+  card: {
+    colors: [colors.beige[50], colors.beige[100]],
+    start: { x: 0, y: 0 },
+    end: { x: 0, y: 1 },
+  },
+  button: {
+    colors: [colors.blue[500], colors.blue[600]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 1 },
+  },
+  success: {
+    colors: [colors.success[400], colors.success[500]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 1 },
+  },
+  warning: {
+    colors: [colors.warning[400], colors.warning[500]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 1 },
+  },
+  danger: {
+    colors: [colors.danger[400], colors.danger[500]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 1 },
+  },
+};
+
+// Animations - Subtle Tactile Animations
+export const animations = {
+  // Spring animations
+  spring: {
+    tension: 100,
+    friction: 8,
+  },
+  // Duration presets
+  duration: {
+    fast: 150,
+    normal: 250,
+    slow: 400,
+    slower: 600,
+  },
+  // Easing functions
+  easing: {
+    ease: 'ease',
+    easeIn: 'ease-in',
+    easeOut: 'ease-out',
+    easeInOut: 'ease-in-out',
+    spring: 'spring(1, 100, 15, 0)',
+  },
+  // Preset animations
+  transitions: {
+    fade: {
+      opacity: {
+        from: 0,
+        to: 1,
+      },
+      duration: animations.duration.normal,
+    },
+    scale: {
+      scale: {
+        from: 0.95,
+        to: 1,
+      },
+      duration: animations.duration.normal,
+    },
+    slideUp: {
+      translateY: {
+        from: 20,
+        to: 0,
+      },
+      duration: animations.duration.normal,
+    },
+    slideDown: {
+      translateY: {
+        from: -20,
+        to: 0,
+      },
+      duration: animations.duration.normal,
+    },
+    ripple: {
+      scale: {
+        from: 0,
+        to: 1,
+      },
+      opacity: {
+        from: 0.5,
+        to: 0,
+      },
+      duration: animations.duration.slow,
+    },
   },
 };
 
