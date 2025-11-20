@@ -257,37 +257,55 @@ export const shapes = {
   },
 };
 
-// Shadows - Web and Mobile Compatible
+// Shadows - Premium Mobile Design
 export const shadows = {
+  // Soft shadow system
   sm: {
     // Mobile shadows
-    shadowColor: colors.neutral[900],
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    shadowColor: colors.text.primary,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
     elevation: 2,
     // Web shadows
-    boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 2px 4px rgba(27, 37, 64, 0.05)',
   },
   md: {
     // Mobile shadows
-    shadowColor: colors.neutral[900],
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-    elevation: 4,
+    shadowColor: colors.text.primary,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    elevation: 6,
     // Web shadows
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.15)',
+    boxShadow: '0 4px 8px rgba(27, 37, 64, 0.08)',
   },
   lg: {
     // Mobile shadows
-    shadowColor: colors.neutral[900],
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 8,
+    shadowColor: colors.text.primary,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    elevation: 12,
     // Web shadows
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0 8px 24px rgba(27, 37, 64, 0.08)',
+  },
+  // Creative shadows for special elements
+  soft: {
+    shadowColor: colors.text.primary,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.1,
+    shadowRadius: 20,
+    elevation: 10,
+    boxShadow: '0 8px 24px rgba(27, 37, 64, 0.08)',
+  },
+  glow: {
+    shadowColor: colors.blue[500],
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 8,
+    boxShadow: '0 0 20px rgba(62, 96, 216, 0.3)',
   },
 };
 
